@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфоліо Розробника</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="lang-selection-overlay">
+        <div class="lang-selection-box">
+            <h2>Оберіть мову / Choose your language</h2>
+            <div class="lang-buttons">
+                <button id="select-uk">Українська</button>
+                <button id="select-en">English</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="console-overlay">
+        <div id="console-text"></div>
+    </div>
+
+    <canvas id="interactive-bg"></canvas>
+
+    <header>
+        <nav>
+            <div class="nav-links">
+                <a href="#about" data-lang-key="nav_about">Про мене</a>
+                <a href="#skills" data-lang-key="nav_skills">Навички</a>
+                <a href="#contact" data-lang-key="nav_contact">Контакти</a>
+            </div>
+            <div class="lang-switcher">
+                <span class="lang-uk active">УКР</span> / <span class="lang-en">ENG</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1 data-lang-key="hero_greeting">Привіт, я Dima</h1>
+                <p data-lang-key="hero_subtitle">Python та Desktop розробник</p>
+                <p class="subtitle" data-lang-key="hero_description">Створюю розумні рішення для автоматизації та унікальні пристрої.</p>
+            </div>
+        </section>
+
+        <section id="about" class="scroll-section">
+            <h2 data-lang-key="about_title">Про мене</h2>
+            <p data-lang-key="about_text">
+                Я — розробник, який з ентузіазмом занурюється у світ Python для створення десктопних додатків та програмування розумних пристроїв (IoT). Мене надихає можливість перетворювати складні технічні задачі на елегантні та ефективні рішення. Моя філософія — постійне навчання та самовдосконалення. Я активно вивчаю нові фреймворки, експериментую з апаратним забезпеченням та шукаю нестандартні підходи до вирішення проблем. Готовий долучитися до проєктів, де зможу застосувати свої знання та здобути новий досвід.
+            </p>
+        </section>
+
+        <section id="skills" class="scroll-section">
+            <h2 data-lang-key="skills_title">Ключові навички</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <h3 data-lang-key="skills_desktop_title">Desktop Розробка</h3>
+                    <ul>
+                        <li data-lang-key="skill_python">Python (PyQt, Tkinter, Kivy)</li>
+                        <li data-lang-key="skill_crossplatform">Створення кросплатформенних додатків (Windows, macOS, Linux)</li>
+                        <li data-lang-key="skill_architecture">Архітектура ПЗ та патерни проєктування</li>
+                        <li data-lang-key="skill_db">Робота з базами даних (SQLite, PostgreSQL)</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3 data-lang-key="skills_iot_title">Розробка для IoT</h3>
+                    <ul>
+                        <li data-lang-key="skill_iot_devices">Raspberry Pi, Arduino, ESP32</li>
+                        <li data-lang-key="skill_micropython">MicroPython / C++</li>
+                        <li data-lang-key="skill_sensors">Робота з сенсорами (температура, вологість, рух) та актуаторами</li>
+                        <li data-lang-key="skill_protocols">Протоколи (MQTT, HTTP, Bluetooth)</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3 data-lang-key="skills_tools_title">Інструменти та Технології</h3>
+                    <ul>
+                        <li data-lang-key="skill_git">Git / GitHub</li>
+                        <li data-lang-key="skill_docker">Docker</li>
+                        <li data-lang-key="skill_cicd">CI/CD (Jenkins, GitHub Actions)</li>
+                        <li data-lang-key="skill_testing">Тестування та відладка</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="contact" class="scroll-section">
+            <h2 data-lang-key="contact_title">Зв'яжіться зі мною</h2>
+            <p data-lang-key="contact_intro">Готовий до співпраці та нових викликів. Зв'яжіться зі мною будь-яким зручним для вас способом:</p>
+            <div class="contact-info">
+                <ul>
+                    <li><strong data-lang-key="contact_email">Email:</strong> <a href="mailto:dimapavlenko0708@gmail.com">dimapavlenko0708@gmail.com</a></li>
+                    <li><strong data-lang-key="contact_telegram">Telegram:</strong> <a href="https://t.me/Pulls_Diesel" target="_blank">@Pulls_Diesel</a></li>
+                    <li><strong data-lang-key="contact_github">GitHub:</strong> <a href="https://github.com/Code-by-Dima" target="_blank">Code-by-Dima</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-lang-key="footer_text">&copy; 2024 Dima. Всі права захищено.</p>
+    </footer>
+
+    <div id="player"></div>
+    <div id="music-control">
+        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/mute.png" alt="Mute/Unmute" id="mute-icon">
+    </div>
+    <div id="music-tooltip" class="hidden">
+        <span id="close-tooltip">&times;</span>
+        <p data-lang-key="music_tooltip">Тут можна ввімкнути/вимкнути музику</p>
+        <div class="arrow"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
