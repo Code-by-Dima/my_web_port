@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Connecting to server... [OK]',
         'Compiling assets... [DONE]',
         'Booting up portfolio sequence...', 
-        'Welcome, Dima!'
+        'Welcome, User!'
     ];
     let currentLine = 0;
     let currentChar = 0;
